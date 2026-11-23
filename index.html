@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Pakistan | Discover Beauty</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8faf8;
+    color: #222;
+}
+
+/* NAVBAR */
+header {
+    background: #063d2b;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #50d69a;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #50d69a;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 90vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.5)),
+    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600')
+    center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    padding: 8%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h4 {
+    color: #50d69a;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #08794e;
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #05a56a;
+    transform: translateY(-3px);
+}
+
+/* GENERAL SECTIONS */
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 36px;
+    color: #063d2b;
+}
+
+.section-description {
+    text-align: center;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* DESTINATIONS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 15px 15px 8px;
+    color: #08794e;
+}
+
+.card p {
+    padding: 0 15px 20px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ABOUT SECTION */
+.about {
+    background: #e7f3eb;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-content p {
+    line-height: 2;
+    color: #555;
+    margin: 25px 0;
+}
+
+/* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* CULTURE SECTION */
+.culture {
+    background: #063d2b;
+    color: white;
+    text-align: center;
+}
+
+.culture h2 {
+    color: white;
+}
+
+.culture p {
+    max-width: 750px;
+    margin: 20px auto;
+    line-height: 1.9;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+.contact form {
+    max-width: 550px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.contact button {
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+/* FOOTER */
+footer {
+    background: #063d2b;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    line-height: 2;
+}
+
+footer h2 {
+    color: #50d69a;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero {
+        height: 75vh;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .cards,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="navbar">
+        <div class="logo">Explore<span>Pakistan</span> 🇵🇰</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h4>WELCOME TO PAKISTAN</h4>
+
+        <h1>Discover The Beauty Of Pakistan</h1>
+
+        <p>
+            Explore breathtaking mountains, beautiful lakes,
+            amazing landscapes and the rich culture of Pakistan.
+            Your unforgettable journey starts here.
+        </p>
+
+        <a href="#destinations" class="btn">
+            Explore Destinations
+        </a>
+    </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="destinations">
+
+    <h2 class="section-title">Popular Destinations</h2>
+
+    <p class="section-description">
+        Discover the most beautiful places in Pakistan.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1566837497312-7be4f7f9b8c5?w=800" alt="Hunza Valley">
+
+            <h3>Hunza Valley</h3>
+
+            <p>
+                A beautiful paradise surrounded by
+                majestic mountains and peaceful valleys.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Skardu scenery">
+
+            <h3>Skardu</h3>
+
+            <p>
+                Experience stunning lakes, mountains
+                and unforgettable natural beauty.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800" alt="Fairy Meadows">
+
+            <h3>Fairy Meadows</h3>
+
+            <p>
+                Enjoy incredible mountain views
+                and the peaceful beauty of nature.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?w=800" alt="Lahore">
+
+            <h3>Lahore</h3>
+
+            <p>
+                Explore historical architecture,
+                traditional food and rich culture.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="about-content">
+
+        <h2 class="section-title">About Pakistan</h2>
+
+        <p>
+            Pakistan is a country full of natural beauty,
+            historical places and diverse cultures.
+
+            From the mighty mountains of the north to the
+            beautiful beaches of the south, Pakistan offers
+            amazing experiences for every traveler.
+
+            Discover its traditions, hospitality, history
+            and breathtaking landscapes with Explore Pakistan.
+        </p>
+
+        <a href="#gallery" class="btn">Explore Gallery</a>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+
+    <h2 class="section-title">Beautiful Pakistan</h2>
+
+    <p class="section-description">
+        A glimpse of Pakistan's breathtaking beauty.
+    </p>
+
+    <div class="gallery-grid">
+
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800" alt="Mountain scenery">
+
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800" alt="Beautiful lake">
+
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800" alt="Nature landscape">
+
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800" alt="Mountain valley">
+
+    </div>
+</section>
+
+<!-- CULTURE -->
+<section class="culture">
+
+    <h2 class="section-title">Culture & Traditions</h2>
+
+    <p>
+        Pakistan is rich in cultural heritage, traditional
+        clothing, delicious food, music, festivals and
+        hospitality. Every region has its own unique identity
+        and traditions that make Pakistan special.
+    </p>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <p class="section-description">
+        Have questions? We would love to hear from you.
+    </p>
+
+    <form onsubmit="sendMessage(event)">
+
+        <input type="text" placeholder="Enter Your Name" required>
+
+        <input type="email" placeholder="Enter Your Email" required>
+
+        <textarea placeholder="Write Your Message" required></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+
+    </form>
+
+    <p id="message"></p>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <h2>Explore Pakistan 🇵🇰</h2>
+
+    <p>Discover Pakistan. Experience the Beauty.</p>
+
+    <p>© 2026 Explore Pakistan | All Rights Reserved</p>
+
+</footer>
+
+<script>
+function sendMessage(event) {
+    event.preventDefault();
+
+    document.getElementById("message").innerHTML =
+    "Thank you! Your message has been received.";
+
+    event.target.reset();
+}
+</script>
+
+</body>
+</html>
